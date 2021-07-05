@@ -33,41 +33,49 @@
 // console.log(result); // we expect back [6, 8, 10, 9]
 
 
-// 3. Better than average
-// Given an array of numbers return a count of how many of the numbers are larger than the average.
+// // 3. Better than average
+// // Given an array of numbers return a count of how many of the numbers are larger than the average.
 
-// function to determine average
-function betterThanAverage(arr) {
-    var sum = 0;
+// // function to determine average
+// function betterThanAverage(arr) {
+//     var sum = 0;
     
-    for (var i = 0; i < arr.length; i++) {
-        sum += arr[i];
-    }
+//     for (var i = 0; i < arr.length; i++) {
+//         sum += arr[i];
+//     }
     
-    var avg = sum / arr.length;
-    var count = 0;
+//     var avg = sum / arr.length;
+//     var count = 0;
     
-    // count how many values are greated than the average
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i] > avg) {
-            count++;
-        }
-    }
-    return count;
-}
-var result = betterThanAverage([6, 8, 3, 10, -2, 5, 9]);
-console.log(result); // we expect back 4
-
-
-// // 4. Array Reverse
-// // Write a function that will reverse the values an array and return them.
-// function reverse(arr) {
-//     // your code here
-//     return arr;
+//     // count how many values are greated than the average
+//     for (var i = 0; i < arr.length; i++) {
+//         if (arr[i] > avg) {
+//             count++;
+//         }
+//     }
+//     return count;
 // }
+// var result = betterThanAverage([6, 8, 3, 10, -2, 5, 9]);
+// console.log(result); // we expect back 4
+
+
+// 4. Array Reverse
+// Write a function that will reverse the values an array and return them.
+function reverse(arr) {
+    var l = 0;
+    var r = arr.length - 1;
+    while (l < r) {
+        var temp = arr[l];
+        arr[l] = arr[r];
+        arr[r] = temp;
+        l++;
+        r--;
+    }
+    return arr;
+}
    
-// var result = reverse(["a", "b", "c", "d", "e"]);
-// console.log(result); // we expect back ["e", "d", "c", "b", "a"]
+var result = reverse(["a", "b", "c", "d", "e"]);
+console.log(result); // we expect back ["e", "d", "c", "b", "a"]
 
 
 // // 5. Fibonacci Array
